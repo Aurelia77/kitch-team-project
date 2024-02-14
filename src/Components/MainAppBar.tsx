@@ -40,22 +40,22 @@ export function MainAppBar() {
           />
         </div>
         <div className='flex items-center justify-center h-[100%] w-[50%]'>
-          <Link href="/browse">
-          <p
-            className='text-[14px] font-[500] hover:text-[#5c16c5] hover:cursor-pointer'
-          >
-            Parcourir
-          </p>
-          </Link>
+          {/* <Link href="/browse">
+            <p
+              className='text-[14px] font-[500] hover:text-[#5c16c5] hover:cursor-pointer'
+            >
+              Parcourir
+            </p>
+          </Link> */}
         </div>
-        <div className='flex w-[25%] h-[100%] flex-col flex-wrap justify-center items-center'>
-            <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
-            <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
-            <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
-        </div>
+        {/* <div className='flex w-[25%] h-[100%] flex-col flex-wrap justify-center items-center'>
+          <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
+          <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
+          <div className="w-[4px] h-[4px] mb-[2px] rounded-full bg-[black]"></div>
+        </div> */}
       </div>
       <div className='border-2 border-solid border-transparent w-[31%] h-full flex items-center justify-center'>
-        <form
+        {/* <form
           onSubmit={Send}
           className='w-full flex items-center justify-between'
         >
@@ -86,25 +86,25 @@ export function MainAppBar() {
               </g>
             </svg>
           </button>
-        </form>
+        </form> */}
       </div>
       <div className='border-2 border-solid border-transparent w-[23%] h-full flex justify-between items-center flex-nowrap'>
-        <svg width="3.5vw" height="3.5vh" viewBox="0 0 20 20">
+        {/* <svg width="3.5vw" height="3.5vh" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
             d="M13.798 10.456 10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z"
             clipRule="evenodd"
           ></path>
         </svg>
-        {/* <button className="w-[8vw] h-[5vh] bg-[#efeff1] rounded border-0">Se Connecter</button>
-        <button className="h-[5vh] w-[6vw] rounded text-[white] bg-[#9147ff] border-0">{"S'inscrire"}</button> */}
+        <button className="w-[8vw] h-[5vh] bg-[#efeff1] rounded border-0">Se Connecter</button>
+        <button className="h-[5vh] w-[6vw] rounded text-[white] bg-[#9147ff] border-0">{"S'inscrire"}</button> 
         <svg width="3.5vw" height="3.5vh" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
             d="M5 7a5 5 0 1 1 6.192 4.857A2 2 0 0 0 13 13h1a3 3 0 0 1 3 3v2h-2v-2a1 1 0 0 0-1-1h-1a3.99 3.99 0 0 1-3-1.354A3.99 3.99 0 0 1 7 15H6a1 1 0 0 0-1 1v2H3v-2a3 3 0 0 1 3-3h1a2 2 0 0 0 1.808-1.143A5.002 5.002 0 0 1 5 7zm5 3a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
             clipRule="evenodd"
           ></path>
-        </svg>
+        </svg>*/}
       </div>
     </AppBar>
   );

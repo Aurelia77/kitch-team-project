@@ -30,8 +30,8 @@ import { ReactPlayerProps } from "react-player/types/lib";
 const ReactPlayer = _ReactPlayer as unknown as React.FC<ReactPlayerProps>;
 
 type ChannelProps = {
-    viewer: number,
-    timeSecondes: number
+    viewer?: number,
+    timeSecondes?: number
 };
 
 export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) {
