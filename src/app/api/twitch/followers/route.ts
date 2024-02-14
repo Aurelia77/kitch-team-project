@@ -10,8 +10,8 @@ export async function GET(request: NextRequest) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Client-ID": process.env.DB_CLIENT || "",
-      Authorization: `Bearer ${process.env.DB_RESULT_TOKEN}`,
+      "Client-ID": process.env.NEXT_PUBLIC_API_CLIENT || "",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
     },
     cache: 'no-store' as RequestCache,
   };

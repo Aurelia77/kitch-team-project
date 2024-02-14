@@ -1,8 +1,8 @@
 const STREAM_API_URL = 'https://api.twitch.tv/helix/streams';
 
 // Replace with your own Twitch Client ID and OAuth token
-const TWITCH_CLIENT_ID = process.env.DB_CLIENT;
-const TWITCH_OAUTH_TOKEN = process.env.DB_RESULT_TOKEN;
+const TWITCH_CLIENT_ID = process.env.NEXT_PUBLIC_API_CLIENT;
+const TWITCH_OAUTH_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 export default async function getStreamData(streamId: string) {
   const headers = new Headers({

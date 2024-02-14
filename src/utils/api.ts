@@ -34,8 +34,8 @@ export async function getStreams(){
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -64,8 +64,8 @@ export async function GetVogue() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -83,8 +83,8 @@ export async function GetRecentlyGames() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -102,8 +102,8 @@ export async function LatestGamesStreams(){
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -120,8 +120,8 @@ export async function GetStreamGamesOne() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -139,8 +139,8 @@ export async function GetStreamGamesTwo() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -158,8 +158,8 @@ export async function GetStreamGamesThree() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -177,8 +177,8 @@ export async function GetCreative() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -196,8 +196,8 @@ export async function GetCombat() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -215,8 +215,8 @@ export async function GetPlatformAndGames() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -234,8 +234,8 @@ export async function GetCarSimulation() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };
@@ -253,8 +253,8 @@ export async function GetSport() {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Client-ID': process.env.DB_CLIENT || '',
-          'Authorization': `Bearer ${process.env.DB_RESULT_TOKEN}`,
+          'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         },
         cache: 'no-store' as RequestCache,
   };

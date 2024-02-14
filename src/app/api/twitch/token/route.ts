@@ -7,7 +7,7 @@ export async function POST() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      client_id: process.env.DB_CLIENT || "",
+      client_id: process.env.NEXT_PUBLIC_API_CLIENT || "",
       client_secret: process.env.DB_KEY_SECRET || "",
       grant_type: "client_credentials",
     }),
