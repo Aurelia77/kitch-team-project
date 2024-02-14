@@ -64,7 +64,7 @@ export function MainAppBar() {
             value={search}
             placeholder="Rechercher"
             onChange={handleSearch}
-            className='w-[90%] border border-solid border-black rounded-[5px_0px_0px_5px] relative z-[9] h-[6vh] focus:outline-4 focus:outline focus:outline-[#772ce8] focus:border-0'
+            className='pl-2 w-[90%] border border-solid border-black rounded-[5px_0px_0px_5px] relative z-[9] h-[6vh] focus:outline-4 focus:outline focus:outline-[#772ce8] focus:border-0'
           />
           <button type="submit" className='w-[10%] rounded-[0px_5px_5px_0px] h-[5.5vh] relative z-[3] bg-[#efeff1] border-0'>
             <svg
@@ -96,8 +96,8 @@ export function MainAppBar() {
             clipRule="evenodd"
           ></path>
         </svg>
-        <button className="w-[8vw] h-[5vh] bg-[#efeff1] rounded border-0">Se Connecter</button>
-        <button className="h-[5vh] w-[6vw] rounded text-[white] bg-[#9147ff] border-0">{"S'inscrire"}</button>
+        {/* <button className="w-[8vw] h-[5vh] bg-[#efeff1] rounded border-0">Se Connecter</button>
+        <button className="h-[5vh] w-[6vw] rounded text-[white] bg-[#9147ff] border-0">{"S'inscrire"}</button> */}
         <svg width="3.5vw" height="3.5vh" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
