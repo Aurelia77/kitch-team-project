@@ -271,22 +271,68 @@ export async function GetSport() {
 // Info sur un USER => https://dev.twitch.tv/docs/api/reference/#get-users (Gets information about one or more users)
 export async function getUser(userLogin: string) {
 
+  console.log("getUser")
+
   try {
     const response = await fetch(`${BASE}/${API_TWITCH}/user?userlogin=${userLogin}`, { cache: 'no-store' });
+
+    console.log("response USER", response)
+
     const data: API<API_USERS[]> = await response.json();
+
+    console.log("data USER", data)
+
     return data;
+    
   } catch (error) {
     console.log("Error in getUser: ", error);
   }
 }
 
+
+// JUSTE POUR COMPARER !!!!!
+// export async function getStreams(){
+//   const options = {
+//       method: 'GET',
+//       headers: {
+//           'Content-Type': 'application/json',
+//           'Client-ID': process.env.NEXT_PUBLIC_API_CLIENT || '',
+//           'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+//         },
+//         cache: 'no-store' as RequestCache,
+//   };
+//   try{
+//       const response = await fetch(`https://api.twitch.tv/helix/streams?language=fr`, options);
+//       const dataStream = await response.json();
+//       return dataStream?.data
+//   }catch(error: any){
+//       console.log("Error in getStreams: ", error)
+//   }
+// }
+
 // Info sur une CHAINE => https://dev.twitch.tv/docs/api/reference/#get-channel-information (Gets information about one or more channels.)
 export async function getChannel(broadcaster_id: string) {
 
+  console.log("getChannel")
+
   try {
-    const response = await fetch(`${BASE}/${API_TWITCH}/channel?broadcaster_id=${broadcaster_id}`, { cache: 'no-store' });
+    const response = await fetch(
+      `${BASE}/${API_TWITCH}/channel?broadcaster_id=${broadcaster_id}`, 
+      { cache: 'no-store' }
+    )
+
+    console.log("response CHANNEL", response)
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } 
+
     const data: API<API_CHANNELS[]> = await response.json();
+
+    console.log("data CHANNEL", data)
+
     return data;
+
   } catch (error) {
     console.log("Error in getChannel: ", error);
   }
@@ -307,10 +353,19 @@ export async function getFollowers(broadcaster_id: string) {
 // Info sur les EQUIPES  => https://dev.twitch.tv/docs/api/reference/#get-channel-teams (Gets the list of Twitch teams that the broadcaster is a member of.)
 export async function getTeams(broadcaster_id: string) {
 
+  console.log("getTeams")
+
   try {
     const response = await fetch(`${BASE}/${API_TWITCH}/team?broadcaster_id=${broadcaster_id}`, { cache: 'no-store' });
+
+    console.log("response TEAM", response)
+
     const data: API<API_TEAMS[]> = await response.json();
+
+    console.log("data TEAM", data)
+
     return data;
+
   } catch (error) {
     console.log("Error in getTeams: ", error);
   }

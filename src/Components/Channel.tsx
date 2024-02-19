@@ -37,6 +37,9 @@ type ChannelProps = {
 export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) {
     const [dataUser, setDataUser] = React.useState<API<API_USERS[]>>(null);
     const [dataChannel, setDataChannel] = React.useState<API<API_CHANNELS[]>>(null);
+
+    console.log("dataChannel", dataChannel)
+
     const [dataFollowers, setDataFollowers] = React.useState<API<API_USERFOLLOWERS>>(null);
     const [followers, setFollowers] = React.useState<API<API_USERFOLLOWERS>>(null);
     const [dataTeams, setDataTeams] = React.useState<API<API_TEAMS[]>>(null);
@@ -57,13 +60,20 @@ export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) 
                 const dataUser = await getUser(userLogin);
                 setDataUser(dataUser);
 
+                console.log("CHANNEL")
+                console.log("dataUser", dataUser)
+
                 if (dataUser) {
 
                     const channelUser1 = await getChannel(dataUser[0].id);
+
+                    console.log(getChannel(dataUser[0].id))
+                    
                     setDataChannel(channelUser1)
 
                     const followersUser1 = await getFollowers(dataUser[0].id);
                     setDataFollowers(followersUser1)
+
                     const teamsUser1 = await getTeams(dataUser[0].id);
                     setDataTeams(teamsUser1)
                 }

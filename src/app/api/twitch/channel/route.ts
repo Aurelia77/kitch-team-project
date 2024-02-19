@@ -22,6 +22,7 @@ export async function GET(request: NextRequest) {
     const twitch = await res.json();
 
     return NextResponse.json(twitch.data);
+    
   } catch (error: any) {
     console.log(error.message);
   }

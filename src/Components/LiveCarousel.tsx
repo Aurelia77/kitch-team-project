@@ -24,11 +24,13 @@ type ChildrenProps = {
 }
 
 export function LiveCarousel() {
+  
   const [liveCarousel, setLiveCarousel] = React.useState<API<API_STREAMS[]>>(null);
   const [curr, setCurr] = React.useState(0)
   //slides.lentgh
   const prev = () => setCurr((curr) => curr === 0 ? 7 - 1 : curr - 1)
   const next = () => setCurr((curr) => curr === 7 - 1 ? 0 : curr + 1)
+
   React.useEffect(() => {
    async function fetchData() {
       try {
