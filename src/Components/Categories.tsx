@@ -14,7 +14,7 @@ import { getImageSized } from "@/utils/getImageSized";
 export function Categories() {
 
   const [categories, setCategories] = useState<API<API_CATEGORIES[]>>(null);
-  console.log("CATEGORIES", categories);
+  //console.log("CATEGORIES", categories);
 
   useEffect(() => {
     getCategories()

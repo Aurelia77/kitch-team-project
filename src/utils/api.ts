@@ -271,25 +271,23 @@ export async function GetSport() {
 // Info sur un USER => https://dev.twitch.tv/docs/api/reference/#get-users (Gets information about one or more users)
 export async function getUser(userLogin: string) {
 
-  console.log("getUser")
+  console.log("!!!getUser")
 
   try {
     const response = await fetch(`${BASE}/${API_TWITCH}/user?userlogin=${userLogin}`, { cache: 'no-store' });
 
-    console.log("response USER", response)
+    console.log("!!!response USER", response)
 
     const data: API<API_USERS[]> = await response.json();
 
-    console.log("data USER", data)
+    console.log("!!!data USER", data)
 
     return data;
     
   } catch (error) {
-    console.log("Error in getUser: ", error);
+    console.log("!!!Error in getUser: ", error);
   }
 }
-
-
 // JUSTE POUR COMPARER !!!!!
 // export async function getStreams(){
 //   const options = {
@@ -311,30 +309,39 @@ export async function getUser(userLogin: string) {
 // }
 
 // Info sur une CHAINE => https://dev.twitch.tv/docs/api/reference/#get-channel-information (Gets information about one or more channels.)
-export async function getChannel(broadcaster_id: string) {
+export async function getChannel(broadcaster_id: string) {  
 
-  console.log("getChannel")
+  //const url = `https://${API_TWITCH}/helix/channels?broadcaster_id=${broadcaster_id}`;
+  //Non car API_TWITCH = "api/twitch"
+  //console.log("url CHANNEL", url)
+  
+  const url = `https://api.twitch.tv/helix/channels?broadcaster_id=${broadcaster_id}`;
 
   try {
-    const response = await fetch(
-      `${BASE}/${API_TWITCH}/channel?broadcaster_id=${broadcaster_id}`, 
-      { cache: 'no-store' }
-    )
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+        'Client-Id': process.env.NEXT_PUBLIC_API_CLIENT || '',
+      },
+      cache: 'no-store',
+    });
 
-    console.log("response CHANNEL", response)
+    //console.log("!!!!response CHANNEL", response)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     } 
 
-    const data: API<API_CHANNELS[]> = await response.json();
+    const json: any = await response.json();
+    const data: API<API_CHANNELS[]> = json.data[0];
 
-    console.log("data CHANNEL", data)
+    console.log("!!!!data CHANNEL", data)
 
     return data;
 
   } catch (error) {
-    console.log("Error in getChannel: ", error);
+    console.log("!!!!Error in getChannel: ", error);
+    return Promise.reject(error);
   }
 }
 

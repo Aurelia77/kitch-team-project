@@ -36,7 +36,9 @@ type ChannelProps = {
 
 export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) {
     const [dataUser, setDataUser] = React.useState<API<API_USERS[]>>(null);
-    const [dataChannel, setDataChannel] = React.useState<API<API_CHANNELS[]>>(null);
+    // Mettre le bon TS !!!
+    //const [dataChannel, setDataChannel] = React.useState<API<API_CHANNELS[]>>(null);
+    const [dataChannel, setDataChannel] = React.useState<any>(null);
 
     console.log("dataChannel", dataChannel)
 
@@ -57,6 +59,7 @@ export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) 
 
         const fetchData = async (): Promise<void> => {
             try {
+
                 const dataUser = await getUser(userLogin);
                 setDataUser(dataUser);
 
@@ -67,8 +70,9 @@ export default function Channel({ viewer = 0, timeSecondes = 0 }: ChannelProps) 
 
                     const channelUser1 = await getChannel(dataUser[0].id);
 
-                    console.log(getChannel(dataUser[0].id))
+                    console.log(channelUser1)  
                     
+                    //channelUser1 && 
                     setDataChannel(channelUser1)
 
                     const followersUser1 = await getFollowers(dataUser[0].id);
@@ -124,7 +128,7 @@ console.log("--dataTeams--", dataTeams);
 
     return (
         <div className="flex flex-row">
-            {!(dataUser && dataChannel) ? (
+            {!(dataUser && dataUser[0] && dataChannel) ? (
                 <Skeleton
                     variant="rounded"
                     width={"100%"}
@@ -156,15 +160,15 @@ console.log("--dataTeams--", dataTeams);
                         </div>
                         <div className=' w-[45%]'>
                             <p className='font-bold'>{dataUser[0].display_name} </p>
-                            <p className='font-bold'>{dataChannel[0].title}</p>
+                            <p className='font-bold'>{dataChannel.title}</p>
                             <div className='flex items-center'>
                                 <Link
-                                    href={`/directory/game/${dataChannel[0].game_name}`}
+                                    href={`/directory/game/${dataChannel.game_name}`}
                                     className="text-[#9147ff]">
-                                    {dataChannel[0].game_name}
+                                    {dataChannel.game_name}
                                 </Link>
                                 <div className='text-[#5f5f5f] text-sm hidden md:flex'>
-                                    {dataChannel[0].tags.map((tag, index) => <p key={index} className=" bg-[#e6e6e6] rounded-full px-2 m-2">{tag}</p>)}
+                                    {dataChannel.tags.map((tag: any, index: number) => <p key={index} className=" bg-[#e6e6e6] rounded-full px-2 m-2">{tag}</p>)}
                                 </div>
                             </div>
                         </div>
